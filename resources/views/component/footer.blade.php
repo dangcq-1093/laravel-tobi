@@ -1,4 +1,4 @@
-<footer class="mt-32 bg-purple-800 text-white pt-32 w-full z-50 bg-white">
+<footer class="mt-32 bg-purple-800 text-white py-32 w-full z-50 bg-white">
     <div class="max-w-screen-2xl mx-auto md:px-16 px-6 md:py-0">
         <div class="flex flex-wrap md:mb-32 mb-16">
             <div class="md:max-w-xl">
@@ -17,8 +17,8 @@
         <div class="flex flex-wrap md:mb-32 mb-16 border-t border-solid border-gray-300"></div>
     </div>
     <div class="max-w-screen-2xl mx-auto md:px-16 px-6 md:py-0">
-        <div class="flex flex-wrap">
-            <div class="flex-grow md:max-w-xl">
+        <div class="xl:flex flex-wrap">
+            <div class="flex-grow 2xl:max-w-xl lg:max-w-lg">
                 <p class="mb-8">Stay up date by joining our newsletter</p>
                 <form action="">
                     <div class="flex">
@@ -27,24 +27,25 @@
                     </div>
                 </form>
             </div>
-            <nav class="md:max-w-xl 2xl:ml-28">
-                <div>
-                    <div>
-                        <a href="">Introduction to AI</a>
-                        <a href="">Building AI</a>
-                        <a href="">FAQ</a>
-                        <a href="">eu2019fi</a>
+            <nav class="2xl:ml-28 xl:ml-20 flex-grow xl:mt-0 mt-16">
+                <div class="md:flex">
+                    <div class="xl:w-11/12 w-4/5">
+                        <a class="block text-xl py-2 hover:cursor-pointer hover:text-gray-400 transition-colors" href="">Introduction to AI</a>
+                        <a class="block text-xl py-2 hover:cursor-pointer hover:text-gray-400 transition-colors" href="">Building AI</a>
+                        <a class="block text-xl py-2 hover:cursor-pointer hover:text-gray-400 transition-colors" href="">FAQ</a>
+                        <a class="block text-xl py-2 hover:cursor-pointer hover:text-gray-400 transition-colors" href="">eu2019fi</a>
                     </div>
-                    <div>
-                        <h2>Follow us</h2>
-                        <a href="">#elementofai</a>
-                        <a href="">aichallenge</a>
+                    <div class="sm:w-full">
+                        <h2 class="text-lg">Follow us</h2>
+                        <a class="block py-2 text-xl" href="">#elementofai</a>
+                        <a class="block py-2 text-xl" href="">aichallenge</a>
                     </div>
                 </div>
             </nav>
         </div>
-        <div class="flex flex-wrap">
-
+        <div class="max-w-lg">
+            <p class="mb-8">Do you have any questions about the course or other issues? Please reach to our <a href="mailto:support@tobi.uet.com">Support</a>!</p>
+            <p>Interested in a custom version of the Elements of AI for your company or a language version for your country? Contact us: <a href="mailto:support@tobi.uet.com">elementsofai@reaktor.com</a></p>
         </div>
     </div>
 </footer>
