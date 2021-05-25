@@ -12,7 +12,7 @@
 <body>
     @include('component.menu')
     @include('component.home.banner')
-    @include('component.home.introduction')
+    @include('component.home.intro')
     @include('component.footer')
 </body>
 </html>
