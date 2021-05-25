@@ -1,8 +1,8 @@
-<header class="fixed top-0 w-full z-50 bg-white">
-    <div class="max-w-screen-2xl mx-auto md:px-16 px-6 bg-white flex flex-wrap items-center md:py-0" style="min-height: 96px;">
+<header class="fixed top-0 w-full z-50">
+    <div class="max-w-screen-2xl mx-auto md:px-16 px-6 bg-gray-50 flex flex-wrap items-center md:py-0" style="min-height: 96px;">
         <div class="flex-1 flex justify-between items-center">
-            <a href="#">
-                Tobi
+            <a href="/">
+                <img class=" h-14 fill-current" src="/img/Tobii_eye_tracking_300pxhigh.png" alt="">
             </a>
         </div>
         <label for="menu-toggle" class="pointer-cursor md:hidden block">
