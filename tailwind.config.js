@@ -802,6 +802,35 @@ module.exports = {
       40: '40',
       50: '50',
     },
+    extend: {
+      keyframes: {
+          'fade-in-down': {
+              '0%': {
+                  opacity: '0',
+                  transform: 'translateY(-10px)'
+              },
+              '100%': {
+                  opacity: '1',
+                  transform: 'translateY(0)'
+              },
+          },
+          'fade-in': {
+            '0%': {
+                opacity: '0',
+            },
+            '50%': {
+                opacity: '0'
+            },
+            '100%': {
+                opacity: '1',
+            },
+          },   
+      },
+      animation: {
+          'fade-in': 'fade-in 1.5s ease-out',
+          'fade-in-down': 'fade-in-down 0.5s ease-out',
+      }
+    },
   },
   variantOrder: [
     'first',

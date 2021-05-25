@@ -11,7 +11,8 @@
 </head>
 <body>
     @include('component.menu')
-    @yield('content')
+    @include('component.home.banner')
+    @include('component.home.introduction')
     @include('component.footer')
 </body>
 </html>
