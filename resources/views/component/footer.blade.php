@@ -1,4 +1,4 @@
-<footer class="mt-32 bg-purple-800 text-white py-32 w-full z-50">
+<footer class="mt-32 bg-purple-800 text-white py-32 w-full z-50 font-sans">
     <div class="max-w-screen-2xl mx-auto md:px-16 px-6 md:py-0">
         <div class="flex flex-wrap md:mb-32 mb-16">
             <div class="md:max-w-xl">
