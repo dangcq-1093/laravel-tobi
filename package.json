@@ -26,5 +26,9 @@
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.3",
         "flickity": "^2.2.2"
+    },
+    "engines": {
+        "node": "12.x",
+        "npm": "6.x"
     }
 }
