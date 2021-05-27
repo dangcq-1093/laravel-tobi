@@ -1,4 +1,5 @@
 {
+    "name": "uet-tobi",
     "private": true,
     "scripts": {
         "dev": "npm run development",
@@ -7,7 +8,8 @@
         "watch-poll": "npm run watch -- --watch-poll",
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
         "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --config=node_modules/laravel-mix/setup/webpack.config.js"
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "postinstall": "npm run production"
     },
     "devDependencies": {
         "autoprefixer": "^9.8.6",
@@ -25,5 +27,10 @@
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.3",
         "flickity": "^2.2.2"
+    },
+    "engines": {
+        "node": "12.x",
+        "npm": "6.x",
+        "yarn": "1.x"
     }
 }
