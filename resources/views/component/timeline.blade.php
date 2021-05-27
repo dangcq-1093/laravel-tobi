@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/font.css') }}" rel="stylesheet">
-    <title>Timeline</title>
-</head>
-<body>
-<section class="mt-32 w-full">
+<section id="timeline-anchor" class="w-full pt-32">
     <div class="max-w-screen-2xl mx-auto md:px-16 px-6 md:py-0">
-        <h1 class="font-bold italic mb-10">PROYECTOS</h1>
+        <h1 class="text-center font-bold text-4xl mb-8">OUR PROGRESS</h1>
 
         <div class="relative mt-5 text-left">
             
@@ -39,9 +29,6 @@
                 </div>
             </div>
 
-
-
-            
             <div class="flex items-center relative">
                 <div class="hidden md:block w-20">
                     <div class="font-bold italic">2020</div>
@@ -124,6 +111,3 @@
         </div>
     </div>
 </section>
-
-</body>
-</html>
