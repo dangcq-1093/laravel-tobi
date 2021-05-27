@@ -12,8 +12,11 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+    .js('resources/js/slide.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css/font.css')
     .postCss('resources/css/custom.css', 'public/css')
     .postCss("resources/css/app.css", "public/css", [
         require("tailwindcss"),
-    ]);
+    ])
+    .copy('node_modules/flickity/dist/flickity.min.css', 'public/css')
+    .copy('node_modules/flickity/dist/flickity.pkgd.min.js', 'public/js');
