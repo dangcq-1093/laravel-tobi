@@ -1,3 +1,10 @@
 #menu-toggle:checked + #menu {
     display: block;
 }
+
+.carousel-cell {
+    width: 30%;
+    margin-right: 10px;
+    border-radius: 5px;
+    counter-increment: carousel-cell;
+}
