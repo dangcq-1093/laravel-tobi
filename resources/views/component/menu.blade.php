@@ -2,7 +2,7 @@
     <div class="max-w-screen-2xl mx-auto md:px-16 px-6 flex flex-wrap items-center md:py-0" style="min-height: 96px;">
         <div class="flex-1 flex justify-between items-center">
             <a href="/">
-                <img class="h-14 fill-current" src="/img/Tobii_eye_tracking_300pxhigh.png" alt="">
+                <img class="w-40 fill-current" src="/img/hmi-t.svg" alt="">
             </a>
         </div>
         <label for="menu-toggle" class="pointer-cursor md:hidden block">
@@ -15,7 +15,7 @@
 
         <div class="hidden md:flex md:items-center md:w-auto w-full" id="menu">
             <nav>
-                <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
+                <ul class="md:flex items-center justify-between text-base pt-4 md:pt-0">
                     <li><a class="md:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400 text-xl" href="#sumary-anchor">Summary</a></li>
                     <li><a class="md:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400 text-xl" href="#description-anchor">Description</a></li>
                     <li><a class="md:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400 text-xl" href="#timeline-anchor">Progress</a></li>
