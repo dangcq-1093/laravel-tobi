@@ -2,7 +2,7 @@
     <div class="max-w-screen-2xl mx-auto md:px-12 px-2 flex md:py-0">
         <div class="md:w-6/12 flex-grow mx-5 mb-12">
             <div class="mb-8">
-                <h2 class="text-4xl font-bold">Project impact</h2>
+                <h2 class="text-4xl font-bold">PROJECT IMPACT</h2>
             </div>
             <div>
                 <p>The impacts of “Eye tracking – Brain computer interface AI-based Vietnamese spelling system for severe motor disabilities” project will be felt in short, medium, and long term. The following are the project results which will be realized upon completion</p>

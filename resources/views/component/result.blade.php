@@ -2,7 +2,7 @@
     <div class="max-w-screen-2xl mx-auto md:px-12 px-2 flex md:py-0">
         <div class="w-full flex-grow mx-5 mb-24">
             <div class="mb-8 text-center">
-                <h2 class="text-4xl font-bold">Our result</h2>
+                <h2 class="text-4xl font-bold">OUTCOME</h2>
             </div>
         </div>
     </div>
