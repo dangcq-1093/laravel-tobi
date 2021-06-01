@@ -7,13 +7,13 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/font.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/login.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 
     <title>Admin</title>
 </head>
 <body>
-    @include('component.admin.login')
+
+    @yield('content')
 
     <!--===============================================================================================-->
     <script src="/js/jquery-3.2.1.min.js"></script>
