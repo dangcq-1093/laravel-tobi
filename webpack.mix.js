@@ -18,4 +18,6 @@ mix.js('resources/js/app.js', 'public/js')
         require("tailwindcss"),
     ])
     .copy('node_modules/flickity/dist/flickity.min.css', 'public/css')
-    .copy('node_modules/flickity/dist/flickity.pkgd.min.js', 'public/js');
+    .copy('node_modules/flickity/dist/flickity.pkgd.min.js', 'public/js')
+    .copy('node_modules/jquery/dist/jquery.min.js', 'public/js')
+    .js('resources/js/ajax.js', 'public/js');

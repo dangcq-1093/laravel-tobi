@@ -13,10 +13,12 @@
             </div>
             <div class="mt-8">
                 <div>
-                    <p class="text-xl font-semibold my-2">Publications</p>
+                    <p class="text-xl font-semibold my-2">{{ $outcome->cards[0]->title }}</p>
                 </div>
                 <div>
-                    <p>- 01 paper in a Q1 ranking journal in computer science or medical engineering or top conference (A or A* ranking)</p>
+                    @foreach ($outcome->cards[0]->descriptions as $description)
+                        <p>{{ $description->content }}</p>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -26,11 +28,15 @@
             </div>
             <div class="mt-8">
                 <div>
-                    <p class="text-xl font-semibold my-2"> Products, services, solutions-oriented applications that will bring real benefits to the community</p>
+                    <p class="text-xl font-semibold my-2">{{ $outcome->cards[1]->title }}</p>
                 </div>
                 <div>
-                    <p>- A big and standard dataset of EEG and eye tracking includes 1500 EEG-ET recordings of 300 people (healthy: 200 and severe motor impaired: 100)</p>
-                    <p>- An ET-BCI spelling system with ET-EEG based spelling recommendation engine</p>
+                    @foreach ($outcome->cards[1]->descriptions as $description)
+                        <p>{{ $description->content }}</p>
+                    @endforeach
+                    @if ($file)
+                        <p>- Download data <a class="text-blue-600" href="{{ route('file.download') }}">here</a></p>
+                    @endif
                 </div>
             </div>
         </div>
@@ -40,11 +46,12 @@
             </div>
             <div class="mt-8">
                 <div>
-                    <p class="text-xl font-semibold my-2">Inventions</p>
+                    <p class="text-xl font-semibold my-2">{{ $outcome->cards[2]->title }}</p>
                 </div>
                 <div>
-                    <p>- 01 US/JP/AU patent registration</p>
-                    <p>- 02 Vietnam patent registration</p>
+                    @foreach ($outcome->cards[2]->descriptions as $description)
+                        <p>{{ $description->content }}</p>
+                    @endforeach
                 </div>
             </div>
         </div>
