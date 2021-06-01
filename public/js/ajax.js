@@ -339,7 +339,7 @@ function updateImpact() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\hades\dev\laravel-tobi\resources\js\ajax.js */"./resources/js/ajax.js");
+module.exports = __webpack_require__(/*! /home/cao.quy.dang/dev/laravel-tobi/resources/js/ajax.js */"./resources/js/ajax.js");
 
 
 /***/ })
