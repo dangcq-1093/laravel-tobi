@@ -40,3 +40,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 });
 
 Route::get('/test', 'HomeController@test');
+
+Route::get('/news', function() {
+    return view('news');
+});
