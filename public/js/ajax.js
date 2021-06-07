@@ -93,6 +93,12 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 var token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 var btnBanner = document.getElementById('btn-banner');
 var btnSummary = document.getElementById('btn-summary');
@@ -326,6 +332,66 @@ function updateImpact() {
     error: function error(res) {
       disableLoading('loading-impact', btnImpact);
       animate(ajaxError);
+    }
+  });
+}
+
+var modal = document.getElementById("modal");
+var btnClose = document.getElementById("btn-close");
+var btnSubmit = document.getElementById("form-upload-btn");
+btnClose.addEventListener('click', function () {
+  modal.classList.toggle("hidden");
+});
+btnSubmit.addEventListener('click', ajaxFile);
+var btnAjaxFile = document.getElementById("form-upload-btn");
+var listBtnUpload = document.querySelectorAll(".btn-modal-upload");
+
+var _iterator = _createForOfIteratorHelper(listBtnUpload),
+    _step;
+
+try {
+  for (_iterator.s(); !(_step = _iterator.n()).done;) {
+    var btnItem = _step.value;
+    btnItem.addEventListener('click', uploadFileModal);
+  }
+} catch (err) {
+  _iterator.e(err);
+} finally {
+  _iterator.f();
+}
+
+;
+
+function uploadFileModal() {
+  var modalDescription = document.getElementById("model-description");
+  modalDescription.textContent = this.previousElementSibling.textContent;
+  modal.classList.toggle("hidden");
+  btnSubmit.dataset.id = this.dataset.id;
+}
+
+function ajaxFile() {
+  var formUpload = document.getElementById('form-upload');
+  var url = formUpload.getAttribute('action');
+  var file = document.getElementById('file');
+  var formData = new FormData();
+  formData.append('description_id', this.dataset.id);
+  formData.append('file', file.files[0]);
+  $.ajax({
+    type: "POST",
+    url: url,
+    data: formData,
+    cache: false,
+    contentType: false,
+    processData: false,
+    success: function success(data) {
+      modal.classList.toggle("hidden");
+      animate(ajaxSuccess);
+      formUpload.reset();
+    },
+    error: function error(res) {
+      modal.classList.toggle("hidden");
+      animate(ajaxError);
+      formUpload.reset();
     }
   });
 }

@@ -3,6 +3,7 @@
 use App\Models\Section;
 use App\Models\Card;
 use App\Models\Description;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -285,6 +286,13 @@ class InitSeeder extends Seeder
                     }
                 }
             }
+
+            User::create([
+                'name' => 'Admin',
+                'email' => 'adminvnu@gmail.com',
+                'username' => 'admin',
+                'password' => Hash::make('admin123'),
+            ])
         }
     }
 }

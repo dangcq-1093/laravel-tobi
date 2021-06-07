@@ -30,7 +30,7 @@ class ContentController extends Controller
             $query->orderBy('order', 'asc');
         }])->type('impact')->first();
 
-        return view('dashboard', compact('banner', 'summary', 'descriptionSection', 'progress', 'outcome', 'impact'));
+        return view('admin.dashboard', compact('banner', 'summary', 'descriptionSection', 'progress', 'outcome', 'impact'));
     }
 
     public function updateBanner(Request $request, $id)

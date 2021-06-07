@@ -12,11 +12,16 @@ class Description extends Model
      * @var array
      */
     protected $fillable = [
-        'content', 'descriptionable_id', 'descriptionable_type',
+        'content', 'descriptionable_id', 'descriptionable_type', 'file_upload_id',
     ];
 
     public function descriptionable()
     {
         return $this->morphTo();
+    }
+
+    public function file()
+    {
+        return $this->hasOne(FileUpload::class);
     }
 }

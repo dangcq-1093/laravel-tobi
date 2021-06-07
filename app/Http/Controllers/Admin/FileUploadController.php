@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\FileUpload;
+use App\Models\Description;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -11,13 +12,11 @@ class FileUploadController extends Controller
 {
     public function store(Request $request) {
         if($request->file('file')) {
-            $files = FileUpload::all();
-            if ($files->count() > 0) {
-                $collection = $files->pluck('filename')->map(function($item)  {
-                    return "public/upload/$item";
-                });
-                Storage::delete($collection->all());
-                FileUpload::truncate();
+            $description = Description::findOrFail($request->description_id);
+            if ($description->file) {
+                $filename = $description->file->filename;
+                Storage::delete("public/upload/$filename");
+                $description->file->delete();
             }
 
             $file = $request->file('file');
@@ -25,22 +24,45 @@ class FileUploadController extends Controller
             $filenameToStore = time() . $filename;
             $path = $file->storeAs('public/upload', $filenameToStore);
 
-            FileUpload::create([
+            $description->file()->create([
                 'filename' => $filenameToStore,
-            ]);
+            ]); 
         } else {
-            return redirect()->back()->withErrors(['message', 'Some thing went wrong! Please try again later.']);
+            return response()->json([
+                'message'  => "'Some thing went wrong! Please try again later.'",
+            ], 400);
         }
 
-        return redirect()->back()->with('message', 'Upload succesful!');
+        return response()->json([
+            'message'  => "Updated Successful!",
+        ], 200);
     }
 
-    public function download() {
-        $file = FileUpload::first();
+    public function download($id) {
+        $file = FileUpload::findOrFail($id);
         if ($file) {
             return Storage::download("public/upload/$file->filename");
         }
 
         return redirect()->back();
+    }
+
+    public function index() {
+        $files = FileUpload::with('description')->get();
+
+        return view('admin.file', compact('files'));
+    }
+
+    public function delete($id) {
+        $file = FileUpload::findOrFail($id);
+        if ($file) {
+            $filename = $file->filename;
+            Storage::delete("public/upload/$filename");
+            $file->delete();
+
+            return redirect()->back()->with('message', 'Delete succesful!');
+        }
+
+        return redirect()->back()->withErrors(['message', 'Some thing went wrong! Please try again later.']);
     }
 }
