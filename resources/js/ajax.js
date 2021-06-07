@@ -242,3 +242,52 @@ function updateImpact() {
     });
 }
 
+let modal = document.getElementById("modal");
+let btnClose = document.getElementById("btn-close");
+let btnSubmit = document.getElementById("form-upload-btn");
+
+btnClose.addEventListener('click', function() {
+    modal.classList.toggle("hidden");
+});
+btnSubmit.addEventListener('click', ajaxFile);
+
+let btnAjaxFile = document.getElementById("form-upload-btn");
+let listBtnUpload = document.querySelectorAll(".btn-modal-upload");
+for(let btnItem of listBtnUpload) {
+    btnItem.addEventListener('click', uploadFileModal);
+};
+
+function uploadFileModal() {
+    let modalDescription = document.getElementById("model-description");
+    modalDescription.textContent = this.previousElementSibling.textContent;
+    modal.classList.toggle("hidden");
+    btnSubmit.dataset.id = this.dataset.id;
+}
+
+function ajaxFile() {
+    let formUpload = document.getElementById('form-upload');
+    let url = formUpload.getAttribute('action');
+    let file = document.getElementById('file');
+    let formData = new FormData();
+    formData.append('description_id', this.dataset.id);
+    formData.append('file', file.files[0]);
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function(data) {
+            modal.classList.toggle("hidden");
+            animate(ajaxSuccess);
+            formUpload.reset();
+        },
+        error: function (res) {
+            modal.classList.toggle("hidden");
+            animate(ajaxError);
+            formUpload.reset();
+        }
+    });
+}
+

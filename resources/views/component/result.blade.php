@@ -17,7 +17,12 @@
                 </div>
                 <div>
                     @foreach ($outcome->cards[0]->descriptions as $description)
-                        <p>{{ $description->content }}</p>
+                        <p>
+                            {{ $description->content }}
+                            @if ($description->file)
+                                <span>(<a class="text-blue-600" href="{{ route('file.download', $description->file->id) }}">data</a>)</span>
+                            @endif
+                        </p>
                     @endforeach
                 </div>
             </div>
@@ -32,11 +37,13 @@
                 </div>
                 <div>
                     @foreach ($outcome->cards[1]->descriptions as $description)
-                        <p>{{ $description->content }}</p>
+                        <p>
+                            {{ $description->content }}
+                            @if ($description->file)
+                                <span>(<a class="text-blue-600" href="{{ route('file.download', $description->file->id) }}">data</a>)</span>
+                            @endif
+                        </p>
                     @endforeach
-                    @if ($file)
-                        <p>- Download data <a class="text-blue-600" href="{{ route('file.download') }}">here</a></p>
-                    @endif
                 </div>
             </div>
         </div>
@@ -50,7 +57,12 @@
                 </div>
                 <div>
                     @foreach ($outcome->cards[2]->descriptions as $description)
-                        <p>{{ $description->content }}</p>
+                        <p>
+                            {{ $description->content }}
+                            @if ($description->file)
+                                <span>(<a class="text-blue-600" href="{{ route('file.download', $description->file->id) }}">data</a>)</span>
+                            @endif
+                        </p>
                     @endforeach
                 </div>
             </div>
