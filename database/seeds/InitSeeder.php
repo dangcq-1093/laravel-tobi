@@ -292,7 +292,7 @@ class InitSeeder extends Seeder
                 'email' => 'adminvnu@gmail.com',
                 'username' => 'admin',
                 'password' => Hash::make('admin123'),
-            ])
+            ]);
         }
     }
 }
