@@ -286,13 +286,15 @@ class InitSeeder extends Seeder
                     }
                 }
             }
-
-            User::create([
-                'name' => 'Admin',
-                'email' => 'adminvnu@gmail.com',
-                'username' => 'admin',
-                'password' => Hash::make('admin123'),
-            ]);
+            $user = User::where('email', 'adminvnu@gmail.com')->first();
+            if (!$user) {
+                User::create([
+                    'name' => 'Admin',
+                    'email' => 'adminvnu@gmail.com',
+                    'username' => 'admin',
+                    'password' => Hash::make('admin123'),
+                ]);
+            };
         }
     }
 }
