@@ -1,0 +1,70 @@
+default:
+  workspace: true
+
+stages:
+- Build
+- Test
+
+jobs:
+
+- name: Sleep
+  stage: Build
+  image: alpine
+  workspace: shared
+  script:
+  - sleep 10
+
+- name: Wake up
+  stage: Build
+  image: alpine
+  workspace: none
+  script:
+  - echo Hello
+
+- name: Sleep again
+  stage: Build
+  image: alpine
+  script:
+  - sleep 10
+
+- name: Sleep more
+  stage: Test
+  image: alpine
+  script:
+  - sleep 10
+  
+- name: PHP CodeSniffer
+  stage: Test
+  image: sunasteriskrnd/php-workspace:7.4
+  before_script:
+  - composer install
+  script:
+  - ./vendor/bin/phpcs ./app ./config -p
+
+- name: PHPUnit
+  stage: Test
+  image: sunasteriskrnd/php-workspace:7.4
+  services:
+  - redis:alpine
+  - image: postgres:12-alpine
+    environment:
+    - POSTGRES_DB=laravel
+    - POSTGRES_USER=admin
+    - POSTGRES_PASSWORD=secret
+  environment:
+  - APP_ENV=testing
+  before_script:
+  - echo 'memory_limit=-1' >> /usr/local/etc/php/conf.d/docker-php-memlimit.ini
+  script:
+  - docker-php-ext-disable xdebug
+  - cp .env.example .env.testing
+  - php artisan key:generate
+  - php artisan migrate
+  - ./vendor/bin/phpunit -d memory_limit=-1 --coverage-html=coverage --coverage-clover ./coverage.xml --log-junit coverage/junit.xml
+  coverage:
+    type: clover
+    path: api/coverage.xml
+  artifacts:
+    paths:
+    - api/coverage
+    expires_in: 3 days
