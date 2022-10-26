@@ -15,7 +15,7 @@
 
         <div class="hidden md:flex md:items-center md:w-auto w-full" id="menu">
             <nav>
-                <ul class="md:flex items-center justify-between text-base pt-4 md:pt-0">
+                <ul class="list-none md:flex items-center justify-between text-base pt-4 md:pt-0">
                     <li><a class="md:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400 text-xl" href="#sumary-anchor">Summary</a></li>
                     <li><a class="md:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400 text-xl" href="#description-anchor">Description</a></li>
                     <li><a class="md:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400 text-xl" href="#timeline-anchor">Progress</a></li>

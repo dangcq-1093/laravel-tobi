@@ -1,8 +1,8 @@
 {
+    "/js/ajax.js": "/js/ajax.js",
     "/js/app.js": "/js/app.js",
     "/css/font.css": "/css/font.css",
     "/css/custom.css": "/css/custom.css",
     "/css/app.css": "/css/app.css",
-    "/css/flickity.min.css": "/css/flickity.min.css",
-    "/js/flickity.pkgd.min.js": "/js/flickity.pkgd.min.js"
+    "/js/jquery.min.js": "/js/jquery.min.js"
 }

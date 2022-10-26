@@ -9,10 +9,9 @@
     <link href="{{ asset('css/flickity.min.css') }}" rel="stylesheet">
     <title>Tobi</title>
 </head>
-</head>
 <body>
     @include('component.menu')
-    @include('component.home.banner')
+    @include('component.banner')
     @include('component.sumary')
     @include('component.project-description')
     @include('component.timeline')

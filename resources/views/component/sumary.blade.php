@@ -6,7 +6,7 @@
             </div>
         </div>
         <div class="max-w-xl text-center text-lg mx-auto">
-            <p>We focus on building artificial intelligence (AI)-based ACC which takes inputs as the patients’ eye and brain electrical activities and output patients’ intended spelling Vietnamese. The proposed solution is to combine eye tracking (ET) movement and an EEG tracking brain wave pattern inputs to assist patients with difficulties in normal verbal communication to express themselves effectively.</p>
+            <p>{{ $summary->description->content ?? 'We focus on building artificial intelligence (AI)-based ACC which takes inputs as the patients’ eye and brain electrical activities and output patients’ intended spelling Vietnamese. The proposed solution is to combine eye tracking (ET) movement and an EEG tracking brain wave pattern inputs to assist patients with difficulties in normal verbal communication to express themselves effectively.' }}</p>
         </div>
     </div>
 

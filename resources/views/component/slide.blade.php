@@ -1,34 +1,14 @@
-<section class="max-w-screen-2xl mx-auto md:px-16 px-6 flex flex-wrap items-center md:py-0">
-    <div class="carousel w-full overflow-hidden" data-flickity='{ "groupCells": true, "wrapAround": true, "autoPlay": true , "adaptiveHeight": true}'>
-        <div class="rounded carousel-cell">
-            <div class="flex flex-col bg-white px-4 py-2 rounded-xl space-y-5 items-center">
-                <img class="w-full rounded-md" src="https://coffeeordie.com/wp-content/uploads/2019/03/FraserCOVER2.jpg" alt="motivation" />
-                <p class="text-center leading-relaxed">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, modi1.</p>
+@if ($posts->count() > 0)
+    <section class="max-w-screen-2xl mx-auto md:px-16 px-6 flex flex-wrap items-center md:py-0">
+        <div class="grid grid-cols-2 gap-20">
+            <div class="mr-20">
+                <h2 class="font-bold text-4xl">Frequently asked questions/News</h2>
+            </div>
+            <div>
+            @foreach ($posts as $post)
+                <a href="{{ route('post.show', $post->id) }}" class="block py-4 border-t border-black hover:text-blue-600 text-lg font-medium">{{ $post->title }}</a>
+            @endforeach
             </div>
         </div>
-        <div class="rounded carousel-cell">
-            <div class="flex flex-col bg-white px-4 py-2 rounded-xl space-y-5 items-center">
-                <img class="w-full rounded-md" src="https://coffeeordie.com/wp-content/uploads/2019/03/FraserCOVER2.jpg" alt="motivation" />
-                <p class="text-center leading-relaxed">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, modi2.</p>
-            </div>
-        </div>
-        <div class="rounded carousel-cell">
-            <div class="flex flex-col bg-white px-4 py-2 rounded-xl space-y-5 items-center">
-                <img class="w-full rounded-md" src="https://coffeeordie.com/wp-content/uploads/2019/03/FraserCOVER2.jpg" alt="motivation" />
-                <p class="text-center leading-relaxed">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, modi3.</p>
-            </div>
-        </div>
-        <div class="rounded carousel-cell">
-            <div class="flex flex-col bg-white px-4 py-2 rounded-xl space-y-5 items-center">
-                <img class="w-full rounded-md" src="https://coffeeordie.com/wp-content/uploads/2019/03/FraserCOVER2.jpg" alt="motivation" />
-                <p class="text-center leading-relaxed">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, modi4.</p>
-            </div>
-        </div>
-        <div class="rounded carousel-cell">
-            <div class="flex flex-col bg-white px-4 py-2 rounded-xl space-y-5 items-center">
-                <img class="w-full rounded-md" src="https://coffeeordie.com/wp-content/uploads/2019/03/FraserCOVER2.jpg" alt="motivation" />
-                <p class="text-center leading-relaxed">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, modi5.</p>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
+@endif

@@ -17,5 +17,6 @@ mix.js('resources/js/app.js', 'public/js')
     .postCss("resources/css/app.css", "public/css", [
         require("tailwindcss"),
     ])
-    .copy('node_modules/flickity/dist/flickity.min.css', 'public/css')
-    .copy('node_modules/flickity/dist/flickity.pkgd.min.js', 'public/js');
+    .copy('node_modules/jquery/dist/jquery.min.js', 'public/js')
+    .copy('node_modules/ckeditor4', 'public/js/ckeditor')
+    .js('resources/js/ajax.js', 'public/js');

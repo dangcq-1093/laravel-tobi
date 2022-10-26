@@ -8,3 +8,9 @@
     border-radius: 5px;
     counter-increment: carousel-cell;
 }
+
+[contenteditable="true"]:active,
+[contenteditable="true"]:focus{
+    border:none;
+    outline:none;
+}
