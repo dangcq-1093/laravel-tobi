@@ -1,0 +1,14 @@
+application:
+  - laravel:7.29
+  - php:8.0
+database:
+  - mysql
+devops:
+  - kubernetes
+  - fluxcd
+  - terraform
+business_tools:
+  - zendesk
+utilities:
+  - google analytics
+  - elasticsearch
