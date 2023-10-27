@@ -12,3 +12,23 @@ business_tools:
 utilities:
   - google analytics
   - elasticsearch
+cloud:
+  aws:
+    - AWS Elastic Compute Cloud (EC2)
+    - AWS EC2 Container Service (ECS)
+    - AWS Simple Storage Service (S3)
+    - AWS CloudFront
+    - AWS Elastic Load Balancing (ELB)
+    - AWS Route 53
+    - AWS Relational Database Service (RDS)
+    - AWS Lambda
+    - AWS Simple Email Service (SES)
+    - AWS Simple Notification Service (SNS)
+    - AWS ElastiCache,AWS Cloudwatch
+  azure:
+    - Azure Virtual Machines
+    - Azure Load Balancer
+    - Azure Redis Cache
+    - Azure SQL Database
+    - Azure DNS
+    - Azure Storage
